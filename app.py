@@ -25,6 +25,10 @@ parking = st.slider('Parking Spaces', 0, 3, 1)
 prefarea = st.selectbox('Preferred Area', ['yes', 'no'], index=1)
 furnishingstatus = st.selectbox('Furnishing Status', ['furnished', 'semi-furnished', 'unfurnished'], index=0)
 
+# Reset button
+if st.button('Reset Inputs'):
+    st.experimental_rerun()
+
 if st.button('Predict Price'):
     try:
         # Prepare input data
