@@ -25,9 +25,18 @@ parking = st.slider('Parking Spaces', 0, 3, 1)
 prefarea = st.selectbox('Preferred Area', ['yes', 'no'], index=1)
 furnishingstatus = st.selectbox('Furnishing Status', ['furnished', 'semi-furnished', 'unfurnished'], index=0)
 
-# Reset button
-if st.button('Reset Inputs'):
-    st.experimental_rerun()
+    # Create columns for buttons
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        predict_button = st.form_submit_button('Predict Price')
+    
+    with col2:
+        reset_button = st.form_submit_button('Reset Inputs')
+
+    # If reset button is clicked, Streamlit will rerun and reset all values to defaults
+    if reset_button:
+        st.experimental_rerun()
 
 if st.button('Predict Price'):
     try:
