@@ -69,7 +69,7 @@ with st.form("house_prediction_form"):
             
             # Make prediction
             prediction = model.predict(input_data)[0]
-            st.success(f'Predicted House Price: ₹{prediction:,.2f}')
+            st.success(f'Predicted House Price: ${prediction:,.2f}')
             
         except Exception as e:
             st.error(f"Error in prediction: {str(e)}")
